@@ -9,8 +9,7 @@ var mainList = {
 };
 
 for (let i = 0; i < 3; i++) {
-	let a = prompt('Какой тип товара будем продавать?');
-	mainList.shopGoods[i] = a;
+	mainList.shopGoods[i] = prompt('Какой тип товара будем продавать?');
 }
 /*let i = 0;
 while (i < 3) {
