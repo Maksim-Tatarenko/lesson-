@@ -3,13 +3,13 @@ var budget,
 	time,
 	price = 100
 
-function start () {
-	budget = prompt("Ваш бюджет на месяц?");
-	while (isNaN(budget) || budget == '' || budget == null) {
-		start(budget);
-	}
-	name = prompt("Название вашего магазина?").toUpperCase();
-	console.log(name);
+	function start () {
+		budget = prompt("Ваш бюджет на месяц?");
+			while (isNaN(budget) || budget == '' || budget == null) {
+				start(budget);
+		}
+		name = prompt("Название вашего магазина?").toUpperCase();
+			console.log(name);
 }
 
 start();
@@ -22,27 +22,33 @@ var mainList = {
 	discount: true,
 	open: true
 };
-function chooseGoods() { 
-for (let i = 0; i < 3; i++) {
-	mainList.shopGoods[i] = prompt('Какой тип товара будем продавать?');
+	function chooseGoods() { 
+		for (let i = 0; i < 3; i++) {
+		mainList.shopGoods[i] = prompt('Какой тип товара будем продавать?');
+	}
 }
-}
+
 chooseGoods();
-function dayBudget() {
- 	document.write("Дневной бюджет составляет " + budget/30 + " р.");
+
+	function dayBudget() {
+	 	document.write("Дневной бюджет составляет " + budget/30 + " р.");
  } 
+ 
  dayBudget();
+ 
  price = 100;
- function disc() {
- 	if (mainList.discount == true) {
- 		console.log(price * 0.8);
+
+	 function disc() {
+	 	if (mainList.discount == true) {
+	 		console.log(price * 0.8);
  	} 
  	
  }
  disc();
-function emplName () {
-for (let i = 1; i <= 4; i++) {
- 	mainList.emploeyers[i] = prompt('Имя сотрудника');
+
+	function emplName () {
+		for (let i = 1; i <= 4; i++) {
+	 	mainList.emploeyers[i] = prompt('Имя сотрудника');
  	 }
  	}
  emplName();
