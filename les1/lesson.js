@@ -24,12 +24,20 @@ var mainList = {
 };
 	function chooseGoods() { 
 		for (let i = 0; i < 3; i++) {
-		mainList.shopGoods[i] = prompt('Какой тип товара будем продавать?');
-	}
+		let a = prompt('Какой тип товара будем продавать?');
+		mainList.shopGoods[i] = a;
+		if ((typeof(a) === 'string' && (typeof(a)) != null && a != " " && a.lenght < 50)) {
+			console.log("Все правильно!");
+			
+			
+	} else {
 }
-
+}
+}
 chooseGoods();
+console.log(mainList.shopGoods);
 
+	
 	function dayBudget() {
 	 	document.write("Дневной бюджет составляет " + budget/30 + " р.");
  } 
@@ -52,7 +60,7 @@ chooseGoods();
  	 }
  	}
  emplName();
- 	 console.log(mainList.emploeyers);
+ 	 //console.log(mainList.emploeyers);
 /*let i = 0;
 while (i < 3) {
 	mainList.shopGoods[i] = prompt ('Какой тип товара будем продавать?'); i++;
