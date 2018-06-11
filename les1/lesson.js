@@ -23,19 +23,19 @@ var mainList = {
 	open: true
 };
 	function chooseGoods() { 
-		for (let i = 0; i < 3; i++) {
+		for (let i = 1; i < 4; i++) {
 		let a = prompt('Какой тип товара будем продавать?');
-		mainList.shopGoods[i] = a;
-		if ((typeof(a) === 'string' && (typeof(a)) != null && a != " " && a.lenght < 50)) {
+		
+		if ((typeof(a) === 'string' && (typeof(a)) != null && a != " " && a.length < 50)) {
 			console.log("Все правильно!");
-			
-			
-	} else {
+			mainList.shopGoods[i] = a;
+		} else {
+		i--;
 }
 }
 }
 chooseGoods();
-console.log(mainList.shopGoods);
+
 
 	
 	function dayBudget() {
@@ -60,6 +60,16 @@ console.log(mainList.shopGoods);
  	 }
  	}
  emplName();
+ 	console.log(mainList.emploeyers);
+
+ mainList.shopGoods.forEach(function(item,i,arr) {
+	alert('У нас вы можете преобрести: ' + i + ': ' + arr[i]);
+})
+
+ 		for (var prop in mainList) {
+ 			console.log("Наш магазин содержит: " + (prop + ': ' + mainList[prop]));
+ 		}
+
  	 //console.log(mainList.emploeyers);
 /*let i = 0;
 while (i < 3) {
