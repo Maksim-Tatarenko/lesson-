@@ -26,7 +26,7 @@ var mainList = {
 	time: 23,
 	shopItems: [],
 	chooseGoods: function chooseGoods() { 
-		for (let i = 1; i < 4; i++) {
+		for (let i = 0; i < 3; i++) {
 			let a = prompt('Какой тип товара будем продавать?');
 			
 			if ((typeof(a) === 'string' && a != null && a != "" && a.length < 50)) {
@@ -60,7 +60,7 @@ var mainList = {
 			}
 	},
 	emplName: function emplName () {
-		for (let i = 0; i <= 3; i++) {
+		for (let i = 1; i <= 4; i++) {
 			mainList.emploeyers[i] = prompt('Имя сотрудника');
 		}
 	},
