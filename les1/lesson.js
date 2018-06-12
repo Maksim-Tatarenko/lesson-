@@ -85,6 +85,9 @@ mainList.emplName();
 	console.log(mainList.emploeyers);
 mainList.chooseShopItems();
 	console.log(mainList.shopItems);
+mainList.shopItems.forEach(function(item,i,arr) {
+	alert('У нас вы можете приобрести: ' + (i+1) + '- ' +  item);
+})
 
 
 
