@@ -60,7 +60,7 @@ var mainList = {
 			}
 	},
 	emplName: function emplName () {
-		for (let i = 1; i <= 4; i++) {
+		for (let i = 0; i <= 3; i++) {
 			mainList.emploeyers[i] = prompt('Имя сотрудника');
 		}
 	},
@@ -78,13 +78,16 @@ var mainList = {
 
 mainList.chooseGoods();
 	console.log(mainList.shopGoods);
+
 mainList.workTime();
 mainList.dayBudget();
 mainList.disc();
 mainList.emplName();
 	console.log(mainList.emploeyers);
+
 mainList.chooseShopItems();
 	console.log(mainList.shopItems);
+
 mainList.shopItems.forEach(function(item,i,arr) {
 	alert('У нас вы можете приобрести: ' + (i+1) + '- ' +  item);
 })
@@ -92,13 +95,9 @@ mainList.shopItems.forEach(function(item,i,arr) {
 
 
 
-/*mainList.shopGoods.forEach(function(item,i,arr) {
-	alert('У нас вы можете преобрести: ' + i + ': ' + arr[i]);
-})
-
-for (var prop in mainList) {
-	console.log("Наш магазин содержит: " + (prop + ': ' + mainList[prop]));
-}*/
+	for (var prop in mainList) {
+		console.log("Наш магазин содержит: " + (prop + ': ' + mainList[prop]));
+	}
  
 //console.log(mainList.emploeyers);
 /*
