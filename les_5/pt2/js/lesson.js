@@ -1,20 +1,52 @@
+let openBtn = document.getElementById('open-btn');
+	nameVal = document.getElementsByClassName('name-value');
+	budVal = document.getElementsByClassName('budget-value');
+	goodVal = document.getElementsByClassName('goods-value');
+	itemVal = document.getElementsByClassName('items-value');
+	emplVal = document.getElementsByClassName('employers-value');
+	discVal = document.getElementsByClassName('discount-value');
+	isOpVal = document.getElementsByClassName('isopen-value');
+	goodItems = document.getElementsByClassName('goods-item');
+	btnBox = document.getElementsByClassName('main-functions');
+	goods_btn = document.getElementsByTagName("button")[1];
+	budget_btn = document.getElementsByTagName("button")[2];
+	emploeyers_btn = document.getElementsByTagName("button")[3];
+	inpGoodIt = btnBox[0].querySelector('#items');
+	inpTime =  btnBox[0].querySelector('#time');
+	inpBudg = btnBox[0].querySelector('#budget');
+	inEmplt = btnBox[0].querySelectorAll('.hire-employers-item');
+
 var budget,
-	name,
-	time,
 	price = 100;
 
-function start () {
-	budget = prompt("Ваш бюджет на месяц?");
+openBtn.addEventListener('click', () => {
+	budget = prompt("Ваш бюджет на месяц?", "");
+		while (isNaN(budget) || budget == '' || budget == null) {
+		budget = prompt("Ваш бюджет на месяц?", "");
+		}
+	budVal[0].textContent = budget;
 
-	while (isNaN(budget) || budget == '' || budget == null) {
-		start(budget);
-	}
+	nameVal[0].textContent = prompt("Название вашего магазина?").toUpperCase();
 
-	name = prompt("Название вашего магазина?").toUpperCase();
-	console.log(name);
-}
+})
 
-start();
+console.log(goods_btn);
+console.log(goodVal[0]);
+
+
+goods_btn.addEventListener('click', () => {
+	for (let i = 0; i < inpGoodIt.length; i++) {
+			let a = inpGoodIt[i].value;
+			if ((typeof(a) === 'string' && a != null && a.length < 50)) {
+				console.log("Все правильно!");
+				mainList.shopGoods[i] = a;
+				goodVal[0].textContent = mainList.shopGoods;
+			} else {
+				i = i - 1;
+			}
+		}	
+});
+
 
 var mainList = {
 	budget,
@@ -25,18 +57,6 @@ var mainList = {
 	open: true,
 	time: 23,
 	shopItems: [],
-	chooseGoods: function chooseGoods() { 
-		for (let i = 0; i < 3; i++) {
-			let a = prompt('Какой тип товара будем продавать?');
-			
-			if ((typeof(a) === 'string' && a != null && a != "" && a.length < 50)) {
-				console.log("Все правильно!");
-				mainList.shopGoods[i] = a;
-			} else {
-				i--;
-			}
-		}	
-	},
 	workTime: function workTime(time) {
 			if (time < 0) {
 				console.log('Такого не может быть.');	
@@ -96,51 +116,6 @@ var mainList = {
 		console.log("Наш магазин содержит: " + (prop + ': ' + mainList[prop]));
 	}*/
 
-let btn = document.getElementById('open-btn');
-console.log(btn);
-
-let nameVal = document.getElementsByClassName('name-value');
-console.log(nameVal);
-
-let pName = document.createElement('p');
-	pName.innerHTML = name;	
-	console.log(pName);
-	nameVal[0].appendChild(pName);
-
-let budVal = document.getElementsByClassName('budget-value');
-let pBudg = document.createElement('p');
-	pBudg.innerHTML = budget;
-	budVal[0].appendChild(pBudg);
-
-let goodVal = document.getElementsByClassName('goods-value');
-console.log(goodVal);
-
-let itemVal = document.getElementsByClassName('items-value');
-console.log(itemVal);
-
-let emplVal = document.getElementsByClassName('employers-value');
-console.log(emplVal);
-
-let discVal = document.getElementsByClassName('discount-value');
-console.log(discVal);
-
-let isOpVal = document.getElementsByClassName('isopen-value');
-console.log(isOpVal);
-
-let goodItems = document.getElementsByClassName('goods-item');
-console.log(goodItems);
-
-let btnBox = document.getElementsByClassName('main-functions');
-let btns = btnBox[0].getElementsByTagName("button");
-console.log(btns);
-
-let inpChoIt = btnBox[0].querySelector('#items');
-let inpTime =  btnBox[0].querySelector('#time');
-let inpBudg = btnBox[0].querySelector('#budget');
-console.log(inpChoIt, inpTime, inpBudg);
-
-let inEmplt = btnBox[0].querySelectorAll('.hire-employers-item');
-console.log(inEmplt);
 
 
 
