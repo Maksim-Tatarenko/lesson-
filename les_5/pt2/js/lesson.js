@@ -11,7 +11,7 @@ let openBtn = document.getElementById('open-btn');
 	goods_btn = document.getElementsByTagName("button")[1];
 	budget_btn = document.getElementsByTagName("button")[2];
 	emploeyers_btn = document.getElementsByTagName("button")[3];
-	inpGoodIt = btnBox[0].querySelector('#items');
+	inpChoIt = btnBox[0].querySelector('#items');
 	inpTime =  btnBox[0].querySelector('#time');
 	inpBudg = btnBox[0].querySelector('#budget');
 	inEmplt = btnBox[0].querySelectorAll('.hire-employers-item');
@@ -29,24 +29,34 @@ openBtn.addEventListener('click', () => {
 	nameVal[0].textContent = prompt("Название вашего магазина?").toUpperCase();
 
 })
-
+console.log(goodItems);
 console.log(goods_btn);
 console.log(goodVal[0]);
 
 
 goods_btn.addEventListener('click', () => {
-	for (let i = 0; i < inpGoodIt.length; i++) {
-			let a = inpGoodIt[i].value;
+	for (let i = 0; i < goodItems.length; i++) {
+		let a = goodItems[i].value;
 			if ((typeof(a) === 'string' && a != null && a.length < 50)) {
 				console.log("Все правильно!");
 				mainList.shopGoods[i] = a;
 				goodVal[0].textContent = mainList.shopGoods;
 			} else {
 				i = i - 1;
-			}
+		}
 		}	
 });
 
+
+inpChoIt.addEventListener('change', () => {
+	let items = inpChoIt.value;
+		if (typeof(items) === 'string' && items != '') {		
+			mainList.shopItems = items.split(",");
+			mainList.shopItems.sort(); 
+			itemVal[0].textContent = mainList.shopItems;
+		} 
+
+});
 
 var mainList = {
 	budget,
@@ -84,18 +94,7 @@ var mainList = {
 			mainList.emploeyers[i] = prompt('Имя сотрудника');
 		}
 	},
-	chooseShopItems: function chooseShopItems () {
-		let items = prompt('Перечислите все товары через запятую', "");
-			if (typeof(items) === 'string' && items != null && items != '') {		
-				mainList.shopItems = items.split(",");
-				mainList.shopItems.push(prompt('Подумайте еще', ""));
-				mainList.shopItems.sort(); 
-			}	else {
-					items = prompt('Введите правельные данные.');
-				}
-	}
-}
-
+}	
 /*mainList.chooseGoods();
 	console.log(mainList.shopGoods);*/
 

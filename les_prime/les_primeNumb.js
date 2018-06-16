@@ -16,4 +16,4 @@ for (var i = 1; i <= 100; i++) {
 }
 
   for (var i = 0; i < primaryNumber.length; i++)
-    console.log('1 и' + primaryNumber[i]);
+    console.log('1 и ' + primaryNumber[i]);
