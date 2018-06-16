@@ -6,6 +6,10 @@ let newLi = document.createElement('li');
 	newLi.className = 'menu-item';
 	menu[0].appendChild(newLi);
 
+let body = document.getElementsByTagName('body');
+console.log(body);
+body[0].style.backgroundImage = 'url(img/apple_true.jpg)';
+
 let title = document.getElementById('title');
 console.log(title);
 	title.innerHTML = 'Мы продаем только подлинную технику Apple';
