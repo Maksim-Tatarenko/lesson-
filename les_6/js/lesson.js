@@ -16,6 +16,32 @@ let openBtn = document.getElementById('open-btn');
 	inpBudg = btnBox[0].querySelector('#budget');
 	inEmplt = btnBox[0].querySelectorAll('.hire-employers-item');
 
+let input = document.getElementsByTagName('input');
+	buttons = btnBox[0].getElementsByTagName("button");
+console.log(buttons);
+inpBudg.readOnly = true;
+	for (let i = 0; i < 3; i++) {
+		buttons[i].disabled = true;
+	}
+
+openBtn.addEventListener('click',() => {
+	activButons();
+});
+
+let activButons = function() {
+	for (let i = 0; i < input.length; i++) {
+		input[i].addEventListener('change', () => {
+			if (input[0] != '' || input[1] != '' || input[2] != '' ||
+			input[3] != '' || input[4] != '' || input[5] != '' || input[6] != '' ||
+			input[7] != '' || input[8] != '' || input[9] != '') {
+				for (j = 0; j < 3; j++) {
+					buttons[j].disabled = false;
+				}	
+			}
+		});
+	}
+}
+
 
 
 
