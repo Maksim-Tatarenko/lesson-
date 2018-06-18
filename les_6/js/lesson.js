@@ -31,9 +31,7 @@ openBtn.addEventListener('click',() => {
 let activButons = function() {
 	for (let i = 0; i < input.length; i++) {
 		input[i].addEventListener('change', () => {
-			if (input[0] != '' || input[1] != '' || input[2] != '' ||
-			input[3] != '' || input[4] != '' || input[5] != '' || input[6] != '' ||
-			input[7] != '' || input[8] != '' || input[9] != '') {
+			if (input[i] != '') {
 				for (j = 0; j < 3; j++) {
 					buttons[j].disabled = false;
 				}	
