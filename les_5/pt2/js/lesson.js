@@ -97,9 +97,10 @@ emploeyers_btn.addEventListener('click', () => {
 		}
 });
 
+
+
 var mainList = {
 	budget,
-	name,
 	shopGoods: [],
 	emploeyers: {},
 	discount: true,
@@ -112,10 +113,7 @@ var mainList = {
 		}	else {
 				console.log(price);
 			}
-	},
-	emplName: function emplName () {
-		
-	},
+	}
 }	
 /*mainList.chooseGoods();
 	console.log(mainList.shopGoods);*/

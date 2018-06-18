@@ -16,6 +16,10 @@ let openBtn = document.getElementById('open-btn');
 	inpBudg = btnBox[0].querySelector('#budget');
 	inEmplt = btnBox[0].querySelectorAll('.hire-employers-item');
 
+
+
+
+
 var budget,
 	price = 100;
 
@@ -78,7 +82,7 @@ let time = inpTime.value;
 					};
 	
 	if (mainList.open == true)	{
-		isOpVal[0].style.backgroundСolor = 'green'
+		isOpVal[0].style.backgroundColor = 'green'
 	}	else {
 			isOpVal[0].style.backgroundColor = 'red'
 		}
@@ -112,11 +116,18 @@ var mainList = {
 		}	else {
 				console.log(price);
 			}
-	},
-	emplName: function emplName () {
-		
-	},
+	}
 }	
+
+let quesDisc = confirm('Есть ли у вас скидка?')
+	if (quesDisc == true) {
+		discVal[0].style.backgroundColor = 'green';
+	} 	else {
+		discVal[0].style.backgroundColor = 'red'
+	};
+	
+
+
 /*mainList.chooseGoods();
 	console.log(mainList.shopGoods);*/
 
